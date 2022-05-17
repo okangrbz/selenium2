@@ -54,6 +54,7 @@ public class C04_assertions {
         String expectedUrl="https://www.facebook.com";
         String actuelUrl= driver.getCurrentUrl();
         Assert.assertEquals("Url beklenenden farkli",expectedUrl,actuelUrl);
+
         /*
         Assert ile yaptigimiz testlerle assertion fail olursa
         java codlarin calismasini durudurur ve assert class i bizi
