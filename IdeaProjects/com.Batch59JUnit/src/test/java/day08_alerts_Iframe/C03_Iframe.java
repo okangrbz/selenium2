@@ -32,15 +32,15 @@ public class C03_Iframe {
 
 
     }
-
+/*
     @AfterClass
-    public static void down() {
+   public static void down() {
         driver.close();
     }
-
+*/
     //Bir metod olusturun: iframeTest
     @Test
-    public void iframeTest() {
+    public void iframeTest() throws InterruptedException {
         driver.get("https://the-internet.herokuapp.com/iframe");
 
         //“An IFrame containing….” textinin erisilebilir oldugunu test edin ve  konsolda    yazdirin.
@@ -58,6 +58,7 @@ public class C03_Iframe {
         WebElement iframeElementi = driver.findElement(By.id("mce_0_ifr"));
         driver.switchTo().frame(iframeElementi);
 
+        Thread.sleep(5000);
         WebElement txt = driver.findElement(By.xpath("//body[@id='tinymce']"));
         txt.clear();
         txt.sendKeys("merhaba dunya");
