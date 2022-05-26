@@ -28,7 +28,7 @@ public class C05_ReadExcell {
                 getSheet("Sayfa2").
                 getPhysicalNumberOfRows();//kullanilan satir sayisini verir fiziksel
 
-        int expectedKullanilanSatirsayisi=12;
+        int expectedKullanilanSatirsayisi=14;
         Assert.assertEquals(expectedKullanilanSatirsayisi,kullanilasanSatirSayisi);
     }
 }

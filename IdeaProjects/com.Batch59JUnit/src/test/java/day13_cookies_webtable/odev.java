@@ -32,71 +32,82 @@ ve sutun sayisini girdigimde bana datayi yazdirsin
         driver.get("https://demoqa.com/webtables");
 
         //  2. Headers da bulunan department isimlerini yazdirin
-        List<WebElement> depatmanlar=driver.
+        List<WebElement> depatmanlar = driver.
                 findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td'][6]"));
-        for (WebElement each :depatmanlar) {
-            System.out.println(each.getText()+" , ");
+        System.out.println("\"depatmanlar :");
+        for (WebElement each : depatmanlar) {
+            System.out.println(each.getText());
 
         }
-
+        System.out.println("=====================================================");
 
         //  3. sutunun basligini yazdirin
         List<WebElement> satirlar = driver.findElements(By.xpath("//div[@class='rt-tr-group']"));
 
         List<WebElement> sutunIsmleri = driver.
                 findElements(By.xpath("//div[@class='rt-resizable-header-content']"));
+        System.out.println("Sutun basliklari :");
         for (WebElement each : sutunIsmleri) {
-            System.out.println(each.getText() + "\n".strip());
+            System.out.println(each.getText().strip());
 
         }
-
+        System.out.println("=====================================================");
         //  4. Tablodaki tum datalari yazdirin
-        List<WebElement> tumdatalar=driver.
+        List<WebElement> tumdatalar = driver.
                 findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td']"));
-        for (WebElement each :tumdatalar) {
-            System.out.println(each.getText()+" , ");
+        for (WebElement each : tumdatalar) {
+            System.out.print("Tum datalar: " + each.getText() + " , ");
 
         }
-
+        System.out.println("=====================================================");
         //  5. Tabloda kac cell (data) oldugunu yazdirin
-        List<WebElement> tumElemanlar=driver.
+        List<WebElement> tumElemanlar = driver.
                 findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td']"));
-        System.out.println("tablonun toplam eleman sayisi : "+ tumElemanlar.size());
+        System.out.println("tablonun toplam eleman sayisi : " + tumElemanlar.size());
+        System.out.println("=====================================================");
         //  6. Tablodaki satir sayisini yazdirin
-        List<WebElement> satir=driver.findElements(By.xpath("//div[@class='rt-tr-group']"));
-        System.out.println("satir sayisi :"+satir.size());
+        List<WebElement> satir = driver.findElements(By.xpath("//div[@class='rt-tr-group']"));
+        System.out.println("satir sayisi :" + satir.size());
+        System.out.println("=====================================================");
         //  7. Tablodaki sutun sayisini yazdirin
-        List<WebElement> sutun=driver.findElements(By.xpath("//div[@class='rt-td']"));
-        System.out.println("celull sayisi :"+sutun.size());
+        List<WebElement> sutun = driver.findElements(By.xpath("//div[@class='rt-td']"));
+        System.out.println("celull sayisi :" + sutun.size());
+        System.out.println("=====================================================");
         //  8. Tablodaki 3.kolonu yazdirin
 
 
+        System.out.println("=====================================================");
         //  9. Tabloda "First Name" i Kierra olan kisinin Salary'sini yazdirin
-        tumElemanlar=driver.
-                findElements(By.xpath("//div[@class='rt-tr-group']"));
-        for (int i = 0; i < tumElemanlar.size(); i++) {
-            if (tumElemanlar.get(i).getText().equals("Kierra"))
-            {
-                System.out.println("salariye : "+driver.findElement(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-tr-group']["+i+"]//div[@class='rt-td'][5]")).getText());
-            }
+
+        List<WebElement> firtNAamera = driver.findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td'][1]"));
+
+        for (WebElement each : firtNAamera) {
+
+            if (each.getText().equals("Kierra"));
+
+
 
         }
 
+        System.out.println("=====================================================");
         //10. Page sayfasinda bir method olusturun, Test sayfasindan satir
         //ve sutun sayisini girdigimde bana datayi yazdirsin
 
-
-
+        System.out.println(satirstungetir(1, 1));
 
 
     }
 
-    public WebElement satirstungetir(int satir,int sutun) {
-        WebElement eleman= (WebElement) driver.
-                findElements(By.xpath("//div[@class='rt-tr-group']["+satir+"]" +
-                        "//div[@class='rt-td']["+sutun+"]"));
+    public String satirstungetir(int satir, int sutun) {
+        List<WebElement> eleman = driver.
+                findElements(By.xpath("//div[@class='rt-tr-group'][" + satir + "]" +
+                        "//div[@class='rt-td'][" + sutun + "]"));
+        String sonuc = "";
+        for (WebElement each : eleman) {
+            sonuc = each.getText();
+        }
+        return sonuc;
 
-
-        return  eleman;
     }
+
 }

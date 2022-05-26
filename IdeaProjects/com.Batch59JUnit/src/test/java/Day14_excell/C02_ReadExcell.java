@@ -48,10 +48,11 @@ row.getCell(index)
 
         String actual=book.
                 getSheet("Sayfa1").
-                getRow(3).
+                getRow(1).
                 getCell(3).
                 toString();
 
-
+        System.out.println(actual);
     }
+
 }
