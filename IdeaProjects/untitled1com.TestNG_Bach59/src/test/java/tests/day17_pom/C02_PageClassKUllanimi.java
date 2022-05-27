@@ -14,7 +14,7 @@ public class C02_PageClassKUllanimi {
 
 
         //nutella arat
-        AmazonPage amzon=new AmazonPage();
+        AmazonPage amzon=new AmazonPage();//page sayfasina ulsamak icin yeni obj oluturduk
         amzon.aramakutusu.sendKeys("Nutella"+ Keys.ENTER);
 
         //spnuc yazisinin Nutella icerdigini test et
