@@ -8,7 +8,7 @@ public class ConfigReader {
 
     public static Properties properties;
 
-    static {//her seyeden once calisisan block
+    static {//her seyeden once calisisan block, ve sadece bir kere calisir
         String yol = "configuration.properties";
 
         try {

@@ -16,9 +16,23 @@ public class Driver {
     Driver classindan static methodlar kullanarak Driver olusuturup
     ilgili ayarlarin yapilmasi ve en sonda Driver in kapatilmasi
     tercih edilmistir
+
+    POM da driver classindaki getDriver() methodunun obj olusutrularak
+    kullanilmasini engellemek icin Singleton patent kullanimi benimsenmisitir.
+    Singleton tekli kullanim demek. yani bir clasin farklio classlardan obj
+    olusutrularak kullanimini engellemek icin kullanilir.
+
+    Bunu saglamak icin yapmamiz gerek sey oldukca basit
+    Objet olusuturmak icin kullanilan conracter i privat yaptiimizda
+     baska classlarda driver classindan obj olusutrulmasi mumkun olamaz
+
      */
 
-    public static WebDriver driver;
+     public static WebDriver driver;
+
+   private Driver(){
+
+    }
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -29,6 +43,8 @@ public class Driver {
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                     break;
+
+
 
                 case "headless-chrome":
                     WebDriverManager.chromedriver().setup();
