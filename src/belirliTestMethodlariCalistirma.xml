@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--Bir class da tüm test methodları çalışacaksa bunun için calss seçmek yeterlidir
+bethod seçmemizin  temel amacı class içerisnide sadece belirlenen methodların çalışması
+veya belirlenen methodlar dışındaki tüm methodların çalışmasıdır.
+
+Eğer çalışacak sepecifik methotları belirtmek istersek include
+Çalışmayacak specifik methotları belirtmek istersek    exclude  keywordleri kullanılır.
+
+Eğer methodlar dependsOnMethod ile birbirine bağlanmışsa
+xml dosyası çalışırken çelişki oluşmaması lazım.
+Çelişki durumunda selenium testleri çalıştırmaz.
+
+Suit tag ının içine yazılacak verbose attributu consolda çıkan mesajların daha az veya daha çok olmasını belirler
+1 en az 10 en çok-->
+<suite name="istenen methodlar" verbose="3">
+    <test name="method">
+        <classes>
+            <class name="tests.day16_notations.C03_Priority">
+              <methods>
+                  <include name="test02"></include>
+              </methods>
+            </class>
+            <class name="tests.day16_notations.C04_DependsOnMethods">
+                <methods>
+                    <exclude name="test03"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
