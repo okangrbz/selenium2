@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="tum testleri calistir">
+<suite name="tum testleri calistir" parallel="tests">
    <test name="regression">
        <packages>
            <package name="tests.*"></package>

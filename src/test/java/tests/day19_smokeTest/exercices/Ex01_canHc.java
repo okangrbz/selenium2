@@ -152,7 +152,8 @@ public class Ex01_canHc {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         WebElement xicon = Driver.getDriver().findElement(By.xpath("//button[@class='sc-1h98xa9-0 gFkyvN']"));
         WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
-
+        //List<WebElement> unitprice=Driver.getDriver().findElements(By.xpath("//div[@class='sc-11uohgb-4 bnZqjD']"));
+        List<String> unitpricelist=new ArrayList<>();
         int randm = 0;
         for (int i = 0; i < 5; i++) {
 
@@ -163,9 +164,10 @@ public class Ex01_canHc {
                 jse.executeScript("arguments[0].scrollIntoView();", addicon.get(randm));
                 addicon.get(randm).click();
                 wait.until(ExpectedConditions.elementToBeClickable(xicon));
+                //unitpricelist.add(i,unitprice.get(randm).getText());
                 xicon.click();
                 randm = 0;
-            }
+            }else i--;
 
         }
 
@@ -186,5 +188,6 @@ public class Ex01_canHc {
         System.out.println("===============7=============================");
 //// 7.Checkout'a tıklayın
 
+        //Driver.closeDriver();
     }
 }

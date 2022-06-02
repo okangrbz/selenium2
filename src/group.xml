@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="group calisitrma">
+    <test name="group">
+     <groups>
+         <run>
+             <include name="okan"></include>
+         </run>
+     </groups>
+        <packages>
+            <package name="tests.day16_notations"></package>
+        </packages>
+    </test>
+</suite>

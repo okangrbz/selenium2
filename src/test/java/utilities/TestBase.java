@@ -18,7 +18,7 @@ public abstract class   TestBase {
 
     //abstrac yapmamizin sebebi bu classdan objet uretilmesininonune gecmektir
     protected WebDriver driver;
-    @BeforeMethod
+    @BeforeMethod(groups = "okan")
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -26,7 +26,7 @@ public abstract class   TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
-    @AfterMethod
+    @AfterMethod(groups = "okan")
     public void tearDown(){
 
         driver.quit();

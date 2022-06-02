@@ -3,6 +3,7 @@ package tests.day16_notations;
 import org.testng.annotations.Test;
 import utilities.TestBase;
 
+
 public class C03_Priority extends TestBase {
 
 
@@ -25,7 +26,7 @@ public class C03_Priority extends TestBase {
         driver.get("https://www.bestbuy.com");
         System.out.println(driver.getCurrentUrl());
     }
-    @Test(groups = "grup1")
+    @Test(groups = "okan")
     public void techproedTesti() {
         driver.get("https://www.techproeducation.com");
         System.out.println(driver.getCurrentUrl());

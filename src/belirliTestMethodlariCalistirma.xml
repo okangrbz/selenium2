@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <!--Bir class da tüm test methodları çalışacaksa bunun için calss seçmek yeterlidir
-bethod seçmemizin  temel amacı class içerisnide sadece belirlenen methodların çalışması
+method seçmemizin  temel amacı class içerisnide sadece belirlenen methodların çalışması
 veya belirlenen methodlar dışındaki tüm methodların çalışmasıdır.
 
 Eğer çalışacak sepecifik methotları belirtmek istersek include
