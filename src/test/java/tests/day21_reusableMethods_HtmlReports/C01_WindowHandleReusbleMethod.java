@@ -52,7 +52,7 @@ public class C01_WindowHandleReusbleMethod {
 
 		//acilan yeni tabin titre inin new window oldugunu test edin
 		ReusableMethod.switchToWindow("New Window");
-		String ecxpectedTitre="The Internet";
+		String ecxpectedTitre="New Window";
 		String actualTitre=Driver.getDriver().getTitle();
 		Assert.assertEquals(actualTitre,ecxpectedTitre);
 

@@ -26,6 +26,10 @@ public class Driver {
     Objet olusuturmak icin kullanilan conracter i privat yaptiimizda
      baska classlarda driver classindan obj olusutrulmasi mumkun olamaz
 
+
+     https://us06web.zoom.us/j/83480876357?pwd=TkR0dW9aOHFHZ2lWNi9YQ1J5VzVzdz09
+
+
      */
 
      public static WebDriver driver;
